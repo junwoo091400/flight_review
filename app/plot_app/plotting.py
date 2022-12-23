@@ -435,10 +435,13 @@ class DataPlot:
                              active_scroll=ACTIVE_SCROLL_TOOLS)
             if y_range is not None:
                 self._p.y_range = Range1d(y_range.start, y_range.end)
-            if x_range is not None:
-                # we need a copy, otherwise x-axis zooming will be synchronized
-                # between all plots
-                self._p.x_range = Range1d(x_range.start, x_range.end)
+            
+            # if x_range is not None:
+            #     # we need a copy, otherwise x-axis zooming will be synchronized
+            #     # between all plots
+            #     self._p.x_range = Range1d(x_range.start, x_range.end)
+
+            self._p.x_range = x_range
 
             if changed_params is not None:
                 self._param_change_label = \
